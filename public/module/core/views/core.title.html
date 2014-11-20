@@ -1,0 +1,22 @@
+<section ng-controller="TitleController">
+    <!-- Guest User -->
+    <div ng-if="Auth.isGuest()">
+        <h1>Mis Notas Santo Tomas</h1>
+        <p>Reprehenderit voluptas. Aliquam aspernatur dolor incidunt, ipsa maxime minus optio pariatur temporibus.</p>
+        <a class="btn btn-lg btn-primary" ng-href="/auth/facebook">ENTRA CON FACEBOOK</a>
+        <p>(usuario no logeado, es "invitado")</p>
+    </div>
+    <!-- account not configured -->
+    <div ng-if="Auth.isNewUser()">
+        <h1>Bienvenido {{Auth.user.name() }}</h1>
+        <p>¡Felicidades! tu cuenta esta a punto de ser configurada completamente, solo debes <button class="btn btn-primary btn-xs">Ingresar a tu intranet</button> para acceder a tus notas, tu horario y otras opciones que proximamente estaran disponibles para ti. Ten la seguridad de que no guardamos tu contraseña, incluso puedes cambiarla una vez termines este proceso.</p>
+        <p>(usuario logeado sin token)</p>
+    </div>
+    <!-- account already configured -->
+    <div ng-if="Auth.isFullUser()">
+        <h1>Bienvenido {{ Auth.user.name() }}</h1>
+        <p>{{ Auth.user.carrera() }}</p>
+        <p>IP Santo Tomas - Curico</p>
+        <p>(usuario logeado y con token)</p>
+    </div>
+</section>

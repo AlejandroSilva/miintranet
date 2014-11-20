@@ -1,0 +1,46 @@
+<ul class="list-group col-md-6 col-md-offset-3" ng-controller="ConfigController">
+    <li class="list-group-item list-group-item-success row">
+        <h3 class="col-xs-4"><b>Paso 1:</b></h3>
+        <h3 class="col-xs-6">
+            <button class="btn btn-lg btn-success disabled">Ingresar con Facebook</button>
+        </h3>
+        <h3 class="col-xs-1"><span class="glyphicon glyphicon-ok"></span></h3>
+    <li>
+    <li class="list-group-item row" ng-class="{'list-group-item-success': step2completed, 'list-group-item-danger': step2completed==false}">
+        <h3 class="col-xs-4"><b>Paso 2:</b></h3>
+        <h3 class="col-xs-6">
+            <button class="btn btn-lg btn-primary" ng-click="toogleLoginForm()" ng-disabled="step2completed">Ingresar a tu Intranet</button>
+        </h3>
+        <h3 class="col-xs-1"><span class="glyphicon" ng-class="{ 'glyphicon-ok': step2completed, 'glyphicon-remove': step2completed===false}"></span></h3>
+    </li>
+    <li class="list-group-item row" ng-hide="hideLoginForm">
+        <div class="col-sm-10 col-sm-offset-2">
+
+            <form  ng-submit="processForm()" ng-hide="step2completed">
+                <div class="form-group">
+                    <label for="">Nombre de usuario</label>
+                    <input class="form-control" type="text" placeholder="Ej. juanpablo.perez@alumnos.cst" ng-model="formUser.username" ng-disabled="formLocked"/>
+                </div>
+                <div class="form-group">
+                    <label for="">Contraseña</label>
+                    <input class="form-control" type="password" placeholder="Ej. mipassword123" ng-model="formUser.password" ng-disabled="formLocked"/>
+                </div>
+                <p>{{ message }}</p>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block" ng-disabled="formLocked">Ingresar</button>
+                </div>
+            </form>
+            <div ng-show="step2completed">
+                <h3>Logeado correctamente</h3>
+                <p>Puedes ver tus notas, horarios y asignaturas en tu <a ng-href="/#/dashboard">Dashboard</a></p>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item list-group-item-danger row">
+        <h3 class="col-xs-4"><b>Paso 3:</b></h3>
+        <h3 class="col-xs-6">
+            <button class="btn btn-lg btn-primary">Cuentale a tus amigos</button>
+        </h3>
+        <h3 class="col-xs-1"><span class="glyphicon glyphicon-remove"></span></h3>
+    </li>
+</ul>

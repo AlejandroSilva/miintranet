@@ -1,0 +1,35 @@
+html,
+body {
+  height: 100%;
+}
+ul.list-group {
+  list-style: none;
+}
+.col-warning {
+  color: #48d0d3;
+}
+.navbar-default.navbar-nav > .active > a,
+.navbar-default.navbar-nav > .active > a:hover,
+.navbar-default.navbar-nav > .active > a:focus {
+  color: #777;
+  background-color: #e7e7e7;
+}
+.title {
+  background: #169093;
+  color: #fafcfc;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  margin-bottom: 1em;
+}
+.title h1 {
+  font-size: 5rem;
+}
+.title p,
+.title button {
+  font-size: 2rem;
+  margin: 0 auto;
+}
+.body {
+/*margin-top 1em*/
+  padding-top: 2em;
+}
