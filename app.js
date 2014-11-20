@@ -6,7 +6,7 @@ var config   = require('./config/config.js');
 
 // Database connection
 mongoose.connect(config.mongo_connection, config.db_options, function(err, db) {
-    console.log('conectando a : '+config.mongo_connection +'como: '+config.db_options.user+":"+config.db_options.pass);
+    console.log('conectando a : '+config.mongo_connection +' como: '+config.db_options.user+":"+config.db_options.pass);
     if(err){
         console.warn("Mongodb error: "+err);
     } else {

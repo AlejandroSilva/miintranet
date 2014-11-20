@@ -5,7 +5,7 @@ var mongo_host = process.env.OPENSHIFT_MONGODB_DB_HOST || 'localhost';
 var mongo_port = process.env.OPENSHIFT_MONGODB_DB_PORT || 27017;
 var mongo_user = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'admin';
 var mongo_pass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || '';
-var mongo_db   = 'santotomas';
+var mongo_db   = 'miintranet';
 
 (function checkVariables(){
     console.log("comprobando variables..");
